@@ -1,0 +1,12 @@
+{
+  "name": "your-vendor/unpublished-draft-reminder",
+  "type": "wordpress-plugin",
+  "autoload": {
+    "psr-4": {
+      "DanielDeKay\\DraftReminder\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.4"
+  }
+}
