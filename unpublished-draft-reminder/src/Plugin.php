@@ -1,39 +1,40 @@
 <?php
-/**
- * Plugin initialisation.
- *
- * @package Unpublished_Draft_Reminder
- * @author  Daniel DeKay
- * @since   0.1.0
- */
-
 namespace DanielDeKay\DraftReminder;
 
-// Exit if accessed directly.
-defined( 'ABSPATH' ) || exit;
+// It's good practice to import used classes.
+use DanielDeKay\DraftReminder\Admin\SettingsPage;
 
-/**
- * Plugin initialisation class.
- *
- * @since 0.1.0
- */
 class Plugin {
-
-    /**
-     * Initialise the plugin.
-     *
-     * @return void
-     * @since 0.1.0
-     */
     public static function init(): void {
-        // Dummy implementation for now.
-        // This will be replaced with actual initialisation code later.
-        if ( is_admin() ) {
-            add_action( 'admin_notices', static function () {
-                echo '<div class="notice notice-success is-dismissible"><p>';
-                esc_html_e( 'Unpublished Draft Reminder plugin is active (dummy implementation)!', 'unpublished-draft-reminder' );
-                echo '</p></div>';
-            } );
+        // Load text domain
+        add_action( 'plugins_loaded', [ self::class, 'load_textdomain' ] );
+
+        // Register admin settings page
+        if ( is_admin() ) { // Only load admin classes if in admin area
+            add_action( 'admin_menu', [ self::class, 'register_admin_menu' ] );
         }
+    }
+
+    public static function load_textdomain(): void {
+        load_plugin_textdomain(
+            'unpublished-draft-reminder',
+            false,
+            dirname( plugin_basename( __DIR__ . '/../unpublished-draft-reminder.php' ) ) . '/languages/'
+        );
+    }
+
+    public static function register_admin_menu(): void {
+        // We will create Admin/SettingsPage.php in the next steps.
+        // For now, ensure the directory exists to avoid autoloader issues if it tries to load it.
+        if (!is_dir(__DIR__ . '/Admin')) {
+            mkdir(__DIR__ . '/Admin', 0755, true);
+        }
+        // Create a temporary placeholder file for SettingsPage to avoid fatal errors during this step.
+        // This will be overwritten in the next step.
+        if (!file_exists(__DIR__ . '/Admin/SettingsPage.php')) {
+            file_put_contents(__DIR__ . '/Admin/SettingsPage.php', '<?php namespace DanielDeKay\DraftReminder\Admin; class SettingsPage { public function register() {} }');
+        }
+
+        ( new SettingsPage() )->register();
     }
 }
