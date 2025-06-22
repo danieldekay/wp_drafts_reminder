@@ -1,0 +1,26 @@
+# Temporary files
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+.tmp/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Log files
+*.log
+
+# WordPress specific
+wp-config.php
+.htaccess
+
+# Node modules (if any)
+node_modules/
+
+# Backup files
+*.bak
+*~
