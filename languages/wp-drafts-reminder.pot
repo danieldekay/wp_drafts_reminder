@@ -1,0 +1,103 @@
+# WP Drafts Reminder Translation Template
+# Copyright (c) 2025 Daniel Dekay
+# This file is distributed under the MIT License.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Drafts Reminder 1.0.0\n"
+"Report-Msgid-Bugs-To: https://github.com/danieldekay/wp_drafts_reminder\n"
+"POT-Creation-Date: 2025-01-01 00:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language-Team: \n"
+
+#: wp-drafts-reminder.php
+msgid "Draft Reminder from %s"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Hello %s,"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "You have the following draft posts that have been sitting for more than a week:"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "%d day old"
+msgid_plural "%d days old"
+msgstr[0] ""
+msgstr[1] ""
+
+#: wp-drafts-reminder.php
+msgid "Consider finishing these drafts or removing them if they are no longer needed."
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Best regards,<br>%s"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Drafts Reminder"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Plugin Status"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Next scheduled check:"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Not scheduled"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Old drafts found:"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Current Old Drafts"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "No old drafts found. Great job!"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Title"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Author"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Last Modified"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Days Old"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "(No title)"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Unknown"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Manual Test"
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Click the button below to manually trigger the draft reminder check and send emails."
+msgstr ""
+
+#: wp-drafts-reminder.php
+msgid "Send Test Reminders Now"
+msgstr ""
