@@ -1,0 +1,69 @@
+/**
+ * WP Drafts Reminder — Admin Styles
+ *
+ * @package WP_Drafts_Reminder
+ */
+
+/* ── Status badges ────────────────────────────── */
+.wdr-status-badge {
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 1;
+	padding: 0.25em 0.6em;
+	border-radius: 4px;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	margin-left: 6px;
+	vertical-align: middle;
+}
+
+.status-pending {
+	background: #f0c33d;
+	color: #000;
+}
+
+.status-sent-first {
+	background: #00a32a;
+	color: #fff;
+}
+
+.status-complete {
+	background: #40a5ff;
+	color: #fff;
+}
+
+/* ── Scheduled date ───────────────────────────── */
+.wdr-scheduled-date {
+	font-family: monospace;
+	font-size: 12px;
+	color: #2271b1;
+}
+
+/* ── Main dashboard cards ─────────────────────── */
+.wrap .card h2 {
+	margin-top: 0;
+}
+
+/* ── Drafts table ─────────────────────────────── */
+.wp-list-table.widefat.fixed td {
+	vertical-align: middle;
+}
+
+.wp-list-table.widefat.fixed td strong a {
+	text-decoration: none;
+}
+
+.wp-list-table.widefat.fixed td strong a:hover {
+	text-decoration: underline;
+}
+
+/* ── Settings page ────────────────────────────── */
+.form-table th {
+	width: 220px;
+}
+
+/* ── Email preview ────────────────────────────── */
+.wrap .card > div[style*="border: 1px solid"] {
+	max-width: 720px;
+}

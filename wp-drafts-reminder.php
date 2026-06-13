@@ -48,6 +48,27 @@ class WP_Drafts_Reminder {
     }
 
     /**
+     * Enqueue admin CSS.
+     */
+    public function enqueue_admin_assets($hook) {
+        $base_page = 'toplevel_page_wp-drafts-reminder';
+        $sub_pages = array(
+            'settings_page_wp-drafts-reminder-settings',
+            'settings_page_wp-drafts-reminder-preview',
+            'settings_page_wp-drafts-reminder-drafts',
+        );
+        if ($hook !== $base_page && !in_array($hook, $sub_pages, true)) {
+            return;
+        }
+        wp_enqueue_style(
+            'wp-drafts-reminder-admin',
+            WP_DRAFTS_REMINDER_PLUGIN_URL . 'assets/css/admin.css',
+            array(),
+            WP_DRAFTS_REMINDER_VERSION
+        );
+    }
+
+    /**
      * Constructor
      */
     private function __construct() {
@@ -70,6 +91,9 @@ class WP_Drafts_Reminder {
 
         // Hook into the cron event
         add_action('wp_drafts_reminder_check', array($this, 'check_and_send_reminders'));
+
+        // Enqueue admin assets
+        add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_assets'));
 
         // Add admin menu (only for administrators)
         if (is_admin()) {
